@@ -1,3 +1,5 @@
+task 1 ///////
+
 public class singleThread implements Runnable{
     @Override
     public void run() {
@@ -21,4 +23,73 @@ public class singleThread implements Runnable{
    Thread myObject=new Thread(new singleThread());
    myObject.start();
     }
+}
+
+
+
+task 2 /////////////////////////////////
+
+
+public class multiThreading implements Runnable{
+     public void run(){
+          for (int i =1;i<6;i++){
+               System.out.println(i+"   thread 1");
+               try {
+                    Thread.sleep(500);
+               }catch (InterruptedException e){
+                    e.printStackTrace();
+               }
+          }
+     }
+}
+
+
+
+public class multiThreading2 implements Runnable{
+    public void run(){
+        for (int i=1;i<6;i++){
+            System.out.println(i+"   thread 2");
+            try{
+                Thread.sleep(1000);
+            } catch (InterruptedException e){
+                e.printStackTrace();
+
+            }
+        }
+    }
+
+
+
+
+
+
+public class Main {
+    public static void main(String[]args) {
+        Thread myObject = new Thread(new multiThreading());
+        Thread myObject2 = new Thread(new multiThreading2());
+        myObject.start();
+        myObject2.start();
+        try {
+            myObject.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        try {
+            myObject2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+        for (int i = 1; i < 6; i++) {
+            System.out.println(i + "   main threading");
+           try {
+               Thread.sleep(500);
+           } catch (InterruptedException e){
+               e.printStackTrace();
+           }
+        }
+    }
+}
+
 }
