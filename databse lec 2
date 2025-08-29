@@ -1,1 +1,66 @@
+create table Doctor contain
 
+id, name , salary , address
+----------------------------------
+please insert 10 row with Data as you like 
+-----------------------------------------
+update record number 3 with salary 20000
+----------------------------------
+delete record number 9
+-----------------------------------------
+ please Concatenation all name with salary  of all rows
+----------------------------------
+display all record with salary * 2
+-----------------------------------------
+ select all data with salary  1000 , 2000 , 3000 
+----------------------------------
+rename table Doctor to PRD_DOCTOR
+-----------------------------------------
+//////////////////////////// الحل/////////////////////////////////////  
+
+
+create table doctor(
+id number ,
+name varchar(20),
+salary number(8,2),
+address  varchar(20)
+);
+
+INSERT ALL
+    INTO doctor (id, name, salary, address) VALUES (1,'fares',10000.25,'fym')
+    INTO doctor (id, name, salary, address) VALUES (2,'mohmmed',2003.44,'fym')
+    INTO doctor (id, name, salary, address) VALUES (3,'ali',5000.55,'cairo')
+    INTO doctor (id, name, salary, address) VALUES (4,'zaid',7000.3,'cairo')
+    INTO doctor (id, name, salary, address) VALUES (5,'ahmed',8000.33,'bns')
+    INTO doctor (id, name, salary, address) VALUES (6,'abdellah',9000.33,'bns')
+    INTO doctor (id, name, salary, address) VALUES (7,'omar',17000.33,'fym')
+    INTO doctor (id, name, salary, address) VALUES (8,'jana',15000.33,'cairo')
+    INTO doctor (id, name, salary, address) VALUES (9,'shahd',11000.33,'assuit')
+    INTO doctor (id, name, salary, address) VALUES (10,'khdega',18000.33,'bns')
+SELECT 1 FROM dual;
+
+select * from doctor;
+ update doctor
+ set salary =20000 
+ where id= 3;
+
+select * from doctor;
+
+
+delete from doctor
+where id =9;
+
+select * from doctor;
+
+
+select name ||'_'||salary as name_salary
+from doctor;
+
+
+select salary *2 as double_salary from doctor;
+
+select salary from doctor where salary in (1000,2000,3000);
+
+
+rename doctor to PRD_Doctor;
+desc PRD_Doctor;
