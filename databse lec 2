@@ -64,3 +64,63 @@ select salary from doctor where salary in (1000,2000,3000);
 
 rename doctor to PRD_Doctor;
 desc PRD_Doctor;
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+create Employees table wiith column ( EmployeeID, FirstName, LastName, Department, Salary )
+----------------------------------------------------------------
+Insert a new record into the Employees table.
+
+EmployeeID     FirstName   LastName  Department      Salary
+101            'John1'      'Doe1'     'HR'            20000
+102            'John2'      'Doe2'     'IT'            50000
+103            'John3'      'Doe3'     'CS'            40000
+104            'John4'      'Doe4'     'IT'            10000
+105            'John5'      'Doe5'     'ZX'            30000
+-----------------------------------------------------------------------------------------
+Update the salary of an employee to 600000 with EmployeeID     101.
+-----------------------------------------------------------------
+Delete a record of an employee who Department = 101.
+----------------------------------------------------------------
+Retrieve all employees in the IT department.
+---------------------------------------------------------------
+select * data from table but conatination  FirstName, LastName as one column
+-----------------------------------------------------------------------------------
+
+
+
+
+create table Employees (
+    EmployeeID number,
+    FirstName varchar(20), 
+    LastName varchar(20), 
+    Department varchar(20), 
+    Salary number(8.2)
+) ;
+
+insert into Employees (EmployeeID,FirstName,LastName,Department,Salary) values(101,'John1','Doe1','HR',20000);
+insert into Employees (EmployeeID,FirstName,LastName,Department,Salary) values(102,'John2','Doe2','IT',50000);
+insert into Employees (EmployeeID,FirstName,LastName,Department,Salary) values(103,'John3','Doe3','CS',40000);
+
+insert into Employees (EmployeeID,FirstName,LastName,Department,Salary) values(104,'John4','Doe4','IT',10000);
+insert into Employees (EmployeeID,FirstName,LastName,Department,Salary) values(105,'John5','Doe5','ZX',30000);
+
+update Employees
+set salary =60000
+where EmployeeID =101;
+
+delete from Employees 
+where EmployeeID =101;
+
+select * from Employees 
+where EmployeeID =101;
+
+select FirstName ||'-'||LastName as FullName
+from Employees;
