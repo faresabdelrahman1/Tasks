@@ -33,5 +33,5 @@
 13. select * from employee order by department_id asc,salary desc;
 14. select e.* ,lower(last_name) as last_name_lower from employee e;
 15. select e.* ,upper(first_name) as first_name_upper from employee e;
-16. select * from employee where upper(last_name)='SMITH' ;
+17. select * from employee where upper(last_name)='SMITH' ;
 
