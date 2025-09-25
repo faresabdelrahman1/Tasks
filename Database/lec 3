@@ -15,7 +15,9 @@
 15. Retrieve all employees with their first_name in uppercase.
 16. Retrieve all employees with their first_name and last_name in title case (first letter capitalized).
 17. Find employees whose last_name is 'smith', regardless of the case.
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 1. select * from employee  where emp_id between 100 and 105;
 2. select * from employee where emp_id in(151 , 152, 153, 154 , 155);
 3. select * from employee where first_name like 'P%' or first_name like 'p%';
