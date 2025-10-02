@@ -1,0 +1,88 @@
+Please 
+create interface UserService with 2 function 
+
+void save (String name);
+void update (String name);
+
+create class PersonService that implement UserService
+create class MangerService that implement UserService
+
+create Container on your project 
+create bean of PersonService
+create bean of MangerService
+
+call two bean on main class and call save and update function
+----------------------------------------------------------------------------
+apply Container xml
+apply container java no xml
+/////////////////////////////////////
+
+package com.example;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Main {
+    public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+
+        UserService person =  context.getBean("personService",UserService.class);
+        person.save("Ali");
+        person.update("Ali");
+
+        UserService manager =  context.getBean("managerService",UserService.class);
+        manager.save("Sara");
+        manager.update("Sara");
+    }
+}
+
+
+
+package com.example;
+
+public interface UserService {
+    void update(String name);
+    void save(String name);
+}
+
+
+package com.example;
+
+public class personService implements UserService{
+    public void save(String name){
+        System.out.println("saving person name"+name);
+    }
+    public void update(String name){
+        System.out.println("updating person name "+name);
+    }
+}
+
+
+
+
+package com.example;
+
+public class managerService implements UserService{
+    public void save(String name){
+        System.out.println("saving manager name  "+name);
+
+    }
+    public void update(String  name){
+        System.out.println("update manager name "+name);
+
+    }
+}
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="person" class="com.example.personService"/>
+    <bean id="manger" class="com.example.mangerService"/>
+</beans>
+
+
