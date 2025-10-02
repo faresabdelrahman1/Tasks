@@ -1,1 +1,31 @@
 
+create Doctor with 
+id name salary
+
+create Patient with
+id name age
+
+doctor has many patient
+patient has many doctor
+
+- please create classes with relation
+
+////////////////////////////////////////////////////////
+create table doctor(
+    id number primary key,
+    name varchar(20),
+    salary number(8,2)  
+     
+)
+create table patient(
+    id number primary key,
+    name varchar(20),
+    age number
+)
+create table doc_patient(
+pk_doc number not null,
+pk_patient number not null,
+constraint pk_doc_patient  primary key(pk_doc,pk_patient),
+constraint fk_doc foreign key (pk_doc) reference doctor(id),
+constraint fk_patient foreign key (pk_patient) reference patient(id)
+);
