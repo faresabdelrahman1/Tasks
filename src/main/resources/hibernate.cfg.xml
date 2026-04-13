@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">
+            org.postgresql.Driver
+        </property>
+
+        <property name="hibernate.connection.url">
+            jdbc:postgresql://ep-fragrant-bush-ahdnnn81-pooler.c-3.us-east-1.aws.neon.tech:5432/neondb?sslmode=require&amp;channel_binding=require
+        </property>
+
+        <property name="hibernate.connection.username">
+            neondb_owner
+        </property>
+
+        <property name="hibernate.connection.password">
+            npg_rnNLQyceg60D
+        </property>
+
+<!--        &lt;!&ndash; Hibernate properties &ndash;&gt;-->
+<!--        <property name="hibernate.dialect">-->
+<!--            org.hibernate.dialect.PostgreSQLDialect-->
+<!--        </property>-->
+
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- auto create / update tables -->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+
+<!--        &lt;!&ndash; Entity classes &ndash;&gt;-->
+<!--        <mapping class="com.spring.boot908.demo9.Model.Person"/>-->
+<!--        <mapping class="com.spring.boot908.demo903.Model.Address"/>-->
+
+    </session-factory>
+</hibernate-configuration>
